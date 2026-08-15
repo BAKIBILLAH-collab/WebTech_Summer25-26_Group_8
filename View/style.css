@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    background: #efefef;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 30px auto;
+    background: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #d5d5d5;
+    padding: 25px;
+}
+
+.header-box {
+    background: #d9d9d9;
+    border: 1px solid #bdbdbd;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.header-box h2 {
+    margin: 0;
+    color: #1f2d3d;
+}
+
+.topnav {
+    background: #f3f3f3;
+    border: 1px solid #d8d8d8;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.topnav a {
+    color: #2b4c7e;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.page-title {
+    text-align: center;
+    color: #203a5a;
+    margin-bottom: 20px;
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-table td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.label {
+    width: 200px;
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    font-family: Arial, sans-serif;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+.btn {
+    background: #2b4c7e;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-alt {
+    background: #808080;
+}
+
+.button-row {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.link-row {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.link-row a {
+    text-decoration: none;
+    color: #2b4c7e;
+    font-weight: bold;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.card {
+    border: 1px solid #d1d1d1;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #2b4c7e;
+    margin-top: 0;
+}
+
+.card a {
+    display: inline-block;
+    background: #2b4c7e;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.notice-box {
+    background: #fff6d9;
+    border: 1px solid #e1cb73;
+    color: #7a5d00;
+    padding: 18px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.receipt-box {
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 20px;
+}
+
+.small-text {
+    color: #555;
+    font-size: 14px;
+}
