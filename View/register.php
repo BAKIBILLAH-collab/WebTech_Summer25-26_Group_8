@@ -23,19 +23,19 @@
             <table class="form-table">
                 <tr>
                     <td class="label"><label>Full Name:</label></td>
-                    <td><input type="text" name="full_name" value="Ayesha Rahman"></td>
+                    <td><input type="text" name="full_name" value="A.M.M Bakibillah"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Email:</label></td>
-                    <td><input type="email" name="email" value="ayesha@example.com"></td>
+                    <td><input type="email" name="email" value="moosa@example.com"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Phone Number:</label></td>
-                    <td><input type="text" name="phone" value="01712345678"></td>
+                    <td><input type="text" name="phone" value="017-********"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Password:</label></td>
-                    <td><input type="password" name="password" value="123456"></td>
+                    <td><input type="password" name="password" value="Password"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Membership Status:</label></td>
@@ -53,7 +53,7 @@
                 </tr>
                 <tr>
                     <td class="label"><label>Registered Date:</label></td>
-                    <td><input type="date" name="registered_date" value="2026-08-16"></td>
+                    <td><input type="date" name="registered_date" value="2026-08-12"></td>
                 </tr>
             </table>
 
