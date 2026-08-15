@@ -30,6 +30,7 @@
                             <option>Technology</option>
                             <option>Science</option>
                             <option>History</option>
+                            <option>Novel</option>
                         </select>
                     </td>
                     <td style="width: 150px;"><button class="btn" type="submit">Search</button></td>
