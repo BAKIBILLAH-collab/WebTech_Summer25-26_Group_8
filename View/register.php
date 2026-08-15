@@ -17,7 +17,7 @@
             <a href="register.php">Register</a>
         </div>
 
-        <h1 class="page-title">1.2 Register Account</h1>
+        <h1 class="page-title">Register Account</h1>
 
         <form action="search_book.php" method="post">
             <table class="form-table">

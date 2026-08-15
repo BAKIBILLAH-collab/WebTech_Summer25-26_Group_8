@@ -17,7 +17,7 @@
             <a href="register.php">Register</a>
         </div>
 
-        <h1 class="page-title">Membership Required Alert</h1>
+        <h1 class="page-title">Membership Required</h1>
 
         <div class="notice-box">
             Your membership is inactive. You need an active membership to borrow this book.

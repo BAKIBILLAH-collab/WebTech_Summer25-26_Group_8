@@ -17,31 +17,31 @@
             <a href="register.php">Register</a>
         </div>
 
-        <h1 class="page-title">UI Screens </h1>
+        <h1 class="page-title">Dashboard</h1>
 
         <div class="card-grid">
             <div class="card">
-                <h3>1.1 Login</h3>
+                <h3>Login</h3>
                 <a href="login.php">Open</a>
             </div>
             <div class="card">
-                <h3>1.2 Register Account</h3>
+                <h3>Register Account</h3>
                 <a href="register.php">Open</a>
             </div>
             <div class="card">
-                <h3>1.3 Search Book</h3>
+                <h3>Search Book</h3>
                 <a href="search_book.php">Open</a>
             </div>
             <div class="card">
-                <h3>1.4 Borrow Book</h3>
+                <h3>Borrow Book</h3>
                 <a href="borrow_book.php">Open</a>
             </div>
             <div class="card">
-                <h3>1.5 Membership Required</h3>
+                <h3>Membership Required</h3>
                 <a href="membership_required.php">Open</a>
             </div>
             <div class="card">
-                <h3>1.6 Payment Receipt</h3>
+                <h3>Payment Receipt</h3>
                 <a href="payment_receipt.php">Open</a>
             </div>
         </div>

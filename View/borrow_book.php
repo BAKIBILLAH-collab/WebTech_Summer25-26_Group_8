@@ -17,7 +17,7 @@
             <a href="register.php">Register</a>
         </div>
 
-        <h1 class="page-title">1.4 Borrow Book</h1>
+        <h1 class="page-title">Borrow Book</h1>
 
         <form action="membership_required.php" method="post">
             <table class="form-table">
