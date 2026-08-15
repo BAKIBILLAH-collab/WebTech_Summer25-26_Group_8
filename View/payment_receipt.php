@@ -34,8 +34,8 @@
                     <td>Annual Membership</td>
                 </tr>
                 <tr>
-                    <td class="label"><strong>Amount:</strong></td>
-                    <td>$120.00</td>
+                    <td class="label"><strong>Amount: BDT</strong></td>
+                    <td>120.00</td>
                 </tr>
                 <tr>
                     <td class="label"><strong>Payment Method:</strong></td>

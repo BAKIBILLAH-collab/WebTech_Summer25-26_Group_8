@@ -1,52 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background: #efefef;
+    background: linear-gradient(135deg, #edf3f8 0%, #f7f7f7 100%);
     font-family: Arial, sans-serif;
-    color: #222;
+    color: #1f2937;
 }
 
 .wrapper {
-    width: 80%;
+    width: 82%;
+    max-width: 1100px;
     margin: 30px auto;
     background: #ffffff;
-    border: 1px solid #cfcfcf;
-    border-radius: 10px;
-    box-shadow: 0 0 8px #d5d5d5;
-    padding: 25px;
+    border: 1px solid #dfe7f1;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    padding: 28px;
 }
 
 .header-box {
-    background: #d9d9d9;
-    border: 1px solid #bdbdbd;
+    background: linear-gradient(135deg, #1d3557 0%, #2a5d8f 100%);
+    border-radius: 10px;
     text-align: center;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 18px 16px;
+    margin-bottom: 18px;
+    border: 1px solid #21456d;
 }
 
 .header-box h2 {
     margin: 0;
-    color: #1f2d3d;
+    color: #ffffff;
+    letter-spacing: 0.5px;
 }
 
 .topnav {
-    background: #f3f3f3;
-    border: 1px solid #d8d8d8;
+    background: #f1f6fb;
+    border: 1px solid #d8e4f0;
+    border-radius: 8px;
     text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 12px;
+    margin-bottom: 24px;
 }
 
 .topnav a {
-    color: #2b4c7e;
+    color: #1d3557;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+    margin: 0 16px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.topnav a:hover {
+    color: #2f80ed;
 }
 
 .page-title {
     text-align: center;
-    color: #203a5a;
-    margin-bottom: 20px;
+    color: #183b5f;
+    margin: 12px 0 22px;
+    font-size: 2rem;
 }
 
 .form-table {
@@ -55,13 +69,14 @@ body {
 }
 
 .form-table td {
-    padding: 10px;
+    padding: 12px 10px;
     vertical-align: top;
 }
 
 .label {
     width: 200px;
-    font-weight: bold;
+    font-weight: 700;
+    color: #243b53;
 }
 
 input, select, textarea, button {
@@ -70,10 +85,18 @@ input, select, textarea, button {
 
 input, select, textarea {
     width: 100%;
-    padding: 9px;
-    border: 1px solid #b9b9b9;
-    border-radius: 5px;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fdfdfd;
     box-sizing: border-box;
+    color: #1f2937;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 textarea {
@@ -82,84 +105,99 @@ textarea {
 }
 
 .btn {
-    background: #2b4c7e;
-    color: white;
+    background: linear-gradient(135deg, #1d4e89 0%, #2e7ad8 100%);
+    color: #ffffff;
     border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
+    padding: 10px 22px;
+    border-radius: 8px;
     cursor: pointer;
     margin: 5px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(29, 78, 137, 0.18);
 }
 
 .btn-alt {
-    background: #808080;
+    background: linear-gradient(135deg, #8a9097 0%, #68737d 100%);
 }
 
 .button-row {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .link-row {
     text-align: center;
-    margin-top: 18px;
+    margin-top: 20px;
+    color: #415a75;
 }
 
 .link-row a {
     text-decoration: none;
-    color: #2b4c7e;
-    font-weight: bold;
+    color: #1d4e89;
+    font-weight: 700;
+}
+
+.link-row a:hover {
+    text-decoration: underline;
 }
 
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    gap: 18px;
     margin-top: 25px;
 }
 
 .card {
-    border: 1px solid #d1d1d1;
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
+    border: 1px solid #dfeaf5;
+    background: linear-gradient(180deg, #f9fbff 0%, #f2f7ff 100%);
+    border-radius: 12px;
+    padding: 22px 18px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
 }
 
 .card h3 {
-    color: #2b4c7e;
+    color: #1d3557;
     margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .card a {
     display: inline-block;
-    background: #2b4c7e;
+    background: linear-gradient(135deg, #1d3557 0%, #3a7bd5 100%);
     color: white;
-    padding: 10px 16px;
-    border-radius: 6px;
+    padding: 10px 18px;
+    border-radius: 8px;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: 8px;
+    font-weight: 700;
 }
 
 .notice-box {
-    background: #fff6d9;
-    border: 1px solid #e1cb73;
-    color: #7a5d00;
+    background: linear-gradient(135deg, #fff7dc 0%, #fff0b3 100%);
+    border: 1px solid #f2d27d;
+    color: #8a6200;
     padding: 18px;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
     margin: 20px 0;
 }
 
 .receipt-box {
-    border: 1px solid #d2d2d2;
-    border-radius: 8px;
-    background: #fafafa;
+    border: 1px solid #dfe7f1;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #fafcff 0%, #f4f8ff 100%);
     padding: 20px;
 }
 
 .small-text {
-    color: #555;
+    color: #55657e;
     font-size: 14px;
 }
