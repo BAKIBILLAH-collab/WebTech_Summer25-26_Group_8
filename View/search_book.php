@@ -66,6 +66,13 @@
                 <td>2</td>
                 <td><button class="btn" type="button" onclick="window.location.href='borrow_book.php'">Borrow</button></td>
             </tr>
+            <tr>
+                <td>Billy Summers</td>
+                <td>Stephen King</td>
+                <td>Novel</td>
+                <td>4</td>
+                <td><button class="btn" type="button" onclick="window.location.href='borrow_book.php'">Borrow</button></td>
+            </tr>
         </table>
 
         <div class="link-row">

@@ -23,7 +23,7 @@
             <table class="form-table">
                 <tr>
                     <td class="label"><strong>Customer:</strong></td>
-                    <td>Ayesha Rahman</td>
+                    <td>A.M.M BAKIBILLAH</td>
                 </tr>
                 <tr>
                     <td class="label"><strong>Payment Date:</strong></td>
