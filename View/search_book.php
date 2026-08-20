@@ -1,3 +1,11 @@
+<?php
+
+require_once __DIR__ . '/../Controller/BookController.php';
+
+$search = $_GET['search'] ?? '';
+$category = $_GET['category'] ?? 'All';
+$books = (new BookController())->search($search, $category);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,22 +23,23 @@
             <a href="index.php">Home</a>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <div class="membership-link">
+                <a href="membership_required.php">Membership</a>
+            </div>
         </div>
 
         <h1 class="page-title">Search Book</h1>
 
-        <form action="borrow_book.php" method="post">
+        <form action="search_book.php" method="get">
             <table class="form-table">
                 <tr>
                     <td class="label"><label>Search:</label></td>
-                    <td><input type="text" name="search" value="Programming"></td>
+                    <td><input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search by title or author"></td>
                     <td style="width: 180px;">
-                        <select name="category">
-                            <option>All</option>
-                            <option>Technology</option>
-                            <option>Science</option>
-                            <option>History</option>
-                            <option>Novel</option>
+                        <select name="category" aria-label="Book category">
+                            <?php foreach (['All', 'Technology', 'Science', 'History', 'Novel'] as $categoryOption): ?>
+                                <option value="<?= $categoryOption ?>" <?= $category === $categoryOption ? 'selected' : '' ?>><?= $categoryOption ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </td>
                     <td style="width: 150px;"><button class="btn" type="submit">Search</button></td>
@@ -38,43 +47,37 @@
             </table>
         </form>
 
-        <table class="form-table" style="margin-top: 20px; border: 1px solid #ddd;">
-            <tr style="background: #edf3ff;">
-                <th>Title</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th>Available Copies</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>PHP for Beginners</td>
-                <td>John Smith</td>
-                <td>Technology</td>
-                <td>5</td>
-                <td><button class="btn" type="button" onclick="window.location.href='borrow_book.php'">Borrow</button></td>
-            </tr>
-            <tr>
-                <td>Modern JavaScript</td>
-                <td>Emily Brown</td>
-                <td>Technology</td>
-                <td>3</td>
-                <td><button class="btn" type="button" onclick="window.location.href='borrow_book.php'">Borrow</button></td>
-            </tr>
-            <tr>
-                <td>World History</td>
-                <td>David Lee</td>
-                <td>History</td>
-                <td>2</td>
-                <td><button class="btn" type="button" onclick="window.location.href='borrow_book.php'">Borrow</button></td>
-            </tr>
-            <tr>
-                <td>Billy Summers</td>
-                <td>Stephen King</td>
-                <td>Novel</td>
-                <td>4</td>
-                <td><button class="btn" type="button" onclick="window.location.href='borrow_book.php'">Borrow</button></td>
-            </tr>
-        </table>
+        <form action="borrow_book.php" method="get">
+            <table class="form-table book-table">
+                <tr>
+                    <th>Select</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Available Copies</th>
+                </tr>
+                <?php foreach ($books as $book): ?>
+                    <tr>
+                        <td>
+                            <input class="book-select" type="radio" name="book" value="<?= htmlspecialchars(base64_encode(json_encode($book))) ?>" required>
+                        </td>
+                        <td><?= htmlspecialchars($book['title']) ?></td>
+                        <td><?= htmlspecialchars($book['author']) ?></td>
+                        <td><?= htmlspecialchars($book['category']) ?></td>
+                        <td><?= htmlspecialchars((string) $book['available_copies']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                <?php if ($books === []): ?>
+                    <tr>
+                        <td colspan="5" class="empty-state">No books matched your search.</td>
+                    </tr>
+                <?php endif; ?>
+            </table>
+
+            <div class="button-row">
+                <button class="btn" type="submit" <?= $books === [] ? 'disabled' : '' ?>>Borrow Selected Book</button>
+            </div>
+        </form>
 
         <div class="link-row">
             <a href="login.php">Back to Login</a> |

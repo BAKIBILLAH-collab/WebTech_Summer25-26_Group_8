@@ -14,6 +14,7 @@ body {
 .wrapper {
     width: 100%;
     max-width: 1400px;
+    min-height: calc(100vh - 64px);
     margin: 8px auto 32px;
     background: #ffffff;
     border: 1px solid #dfe7f1;
@@ -41,21 +42,36 @@ body {
     background: #f1f6fb;
     border: 1px solid #d8e4f0;
     border-radius: 8px;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 28px;
     padding: 12px;
     margin-bottom: 24px;
 }
 
+.membership-link {
+    flex-basis: 100%;
+    text-align: right;
+    margin-top: 2px;
+}
+
 .topnav a {
+    display: inline-block;
     color: #1d3557;
     text-decoration: none;
-    margin: 0 16px;
+    background: #ffffff;
+    border: 1px solid #cbdbea;
+    border-radius: 6px;
+    padding: 9px 16px;
     font-weight: 700;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .topnav a:hover {
     color: #2f80ed;
+    background: #edf5ff;
+    border-color: #8db8e6;
 }
 
 .page-title {
@@ -156,6 +172,10 @@ textarea {
 }
 
 .card {
+    display: flex;
+    min-height: 190px;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid #dfeaf5;
     background: linear-gradient(180deg, #f9fbff 0%, #f2f7ff 100%);
     border-radius: 12px;
@@ -165,9 +185,24 @@ textarea {
 }
 
 .card h3 {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
     color: #1d3557;
     margin-top: 0;
     margin-bottom: 12px;
+}
+
+.card-icon {
+    display: block;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 12px;
+}
+
+.card-icon-placeholder {
+    visibility: hidden;
 }
 
 .card a {
@@ -179,6 +214,10 @@ textarea {
     text-decoration: none;
     margin-top: 8px;
     font-weight: 700;
+}
+
+.card a {
+    margin-top: auto;
 }
 
 .notice-box {
@@ -199,6 +238,38 @@ textarea {
     padding: 20px;
 }
 
+.book-table {
+    margin-top: 20px;
+    border: 1px solid #dfe7f1;
+}
+
+.book-table th,
+.book-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5edf5;
+    text-align: left;
+}
+
+.book-table th {
+    background: #edf3ff;
+    color: #183b5f;
+}
+
+.book-table tr:last-child td {
+    border-bottom: none;
+}
+
+.book-select {
+    width: auto;
+    accent-color: #1d4e89;
+}
+
+.empty-state {
+    padding: 28px 12px;
+    color: #55657e;
+    text-align: center !important;
+}
+
 .small-text {
     color: #55657e;
     font-size: 14px;
@@ -212,11 +283,12 @@ textarea {
     .wrapper {
         margin: 0 auto 20px;
         padding: 20px 16px;
+        min-height: calc(100vh - 32px);
     }
 
     .topnav a {
         display: inline-block;
-        margin: 4px 8px;
+        margin: 4px 0;
     }
 
     .page-title {
@@ -225,6 +297,11 @@ textarea {
 
     .form-table .label {
         width: 38%;
+    }
+
+    .book-table {
+        display: block;
+        overflow-x: auto;
     }
 
     .card-grid {

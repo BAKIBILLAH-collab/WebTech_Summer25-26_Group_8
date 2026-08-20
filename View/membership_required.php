@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CareShelf - Membership Required</title>
+    <title>CareShelf - Membership</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,9 +15,12 @@
             <a href="index.php">Home</a>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <div class="membership-link">
+                <a href="membership_required.php">Membership</a>
+            </div>
         </div>
 
-        <h1 class="page-title">Membership Required</h1>
+        <h1 class="page-title">Membership</h1>
 
         <div class="notice-box">
             Your membership is inactive. You need an active membership to borrow this book.

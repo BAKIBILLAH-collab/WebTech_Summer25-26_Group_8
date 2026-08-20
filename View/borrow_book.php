@@ -1,3 +1,10 @@
+<?php
+
+$selectedBook = json_decode(base64_decode($_GET['book'] ?? '', true), true);
+$selectedBook = is_array($selectedBook) ? $selectedBook : [];
+$bookTitle = $selectedBook['title'] ?? 'PHP for Beginners';
+$bookAuthor = $selectedBook['author'] ?? 'John Smith';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +22,9 @@
             <a href="index.php">Home</a>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <div class="membership-link">
+                <a href="membership_required.php">Membership</a>
+            </div>
         </div>
 
         <h1 class="page-title">Borrow Book</h1>
@@ -23,11 +33,11 @@
             <table class="form-table">
                 <tr>
                     <td class="label"><label>Book Title:</label></td>
-                    <td><input type="text" name="book_title" value="PHP for Beginners"></td>
+                    <td><input type="text" name="book_title" value="<?= htmlspecialchars($bookTitle) ?>"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Author:</label></td>
-                    <td><input type="text" name="author" value="John Smith"></td>
+                    <td><input type="text" name="author" value="<?= htmlspecialchars($bookAuthor) ?>"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Borrow Date:</label></td>
