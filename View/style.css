@@ -4,20 +4,22 @@
 
 body {
     margin: 0;
+    min-height: 100vh;
+    padding: 24px;
     background: linear-gradient(135deg, #edf3f8 0%, #f7f7f7 100%);
     font-family: Arial, sans-serif;
     color: #1f2937;
 }
 
 .wrapper {
-    width: 82%;
-    max-width: 1100px;
-    margin: 30px auto;
+    width: 100%;
+    max-width: 1400px;
+    margin: 8px auto 32px;
     background: #ffffff;
     border: 1px solid #dfe7f1;
     border-radius: 14px;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    padding: 28px;
+    padding: clamp(28px, 4vw, 48px);
 }
 
 .header-box {
@@ -39,7 +41,7 @@ body {
     background: #f1f6fb;
     border: 1px solid #d8e4f0;
     border-radius: 8px;
-    text-align: center;
+    text-align: right;
     padding: 12px;
     margin-bottom: 24px;
 }
@@ -148,8 +150,8 @@ textarea {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
     margin-top: 25px;
 }
 
@@ -200,4 +202,33 @@ textarea {
 .small-text {
     color: #55657e;
     font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+    }
+
+    .wrapper {
+        margin: 0 auto 20px;
+        padding: 20px 16px;
+    }
+
+    .topnav a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+
+    .page-title {
+        font-size: 1.65rem;
+    }
+
+    .form-table .label {
+        width: 38%;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }
