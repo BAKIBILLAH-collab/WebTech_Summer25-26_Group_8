@@ -26,11 +26,11 @@
             <table class="form-table">
                 <tr>
                     <td class="label"><label>Email:</label></td>
-                    <td><input type="email" name="email" value="customer@example.com"></td>
+                    <td><input type="email" name="email" value="name@gmail.com"></td>
                 </tr>
                 <tr>
                     <td class="label"><label>Password:</label></td>
-                    <td><input type="password" name="password" value="123456"></td>
+                    <td><input type="password" name="password" value="********"></td>
                 </tr>
             </table>
 
