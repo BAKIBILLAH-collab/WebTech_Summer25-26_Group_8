@@ -146,4 +146,8 @@ include "../Controller/customerremovevalidation.php";
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3daec0c419bcd9eeef9460ecf11a041a447284e6
