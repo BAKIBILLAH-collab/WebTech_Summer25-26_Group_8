@@ -119,13 +119,16 @@ body {
 }
 
 .login-form {
+    display: flex;
     width: 100%;
     max-width: 500px;
-    margin: 40px auto;
+    justify-content: center;
+    margin: 64px auto 40px;
 }
 
 .login-fieldset {
-    padding: 35px;
+    width: 100%;
+    padding: 28px 20px 24px;
     border: 1px solid #d8e4f0;
     border-top: 4px solid #2a5d8f;
     border-radius: 10px;
@@ -143,34 +146,33 @@ body {
 
 .credential-group {
     display: flex;
-    width: 100%;
-    max-width: 395px;
+    width: min(100%, 395px);
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
 }
 
-.login-fieldset .form-group {
+.login-form .form-group {
     display: grid;
     width: 100%;
-    grid-template-columns: 120px minmax(0, 260px);
+    grid-template-columns: 120px 260px;
     align-items: center;
     gap: 15px;
     justify-content: center;
     margin-bottom: 18px;
 }
 
-.login-fieldset .form-group label {
+.login-form .form-group label {
     color: #243b53;
     font-weight: 700;
-    text-align: right;
+    text-align: left;
 }
 
-.login-fieldset .form-group input {
+.login-form .form-group input {
     width: 100%;
 }
 
-.login-fieldset .form-group input {
+.login-form .form-group input {
     max-width: 260px;
     font-size: 12px;
 }
@@ -182,7 +184,7 @@ body {
     margin-top: 5px;
 }
 
-.login-fieldset .remember-label {
+.login-form .remember-label {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -190,14 +192,14 @@ body {
     white-space: nowrap;
 }
 
-.login-fieldset .remember-label input[type="checkbox"] {
+.login-form .remember-label input[type="checkbox"] {
     width: 16px;
     height: 16px;
     margin: 0;
     accent-color: #1d4e89;
 }
 
-.login-fieldset .button-row {
+.login-form .button-row {
     width: 100%;
     text-align: center;
     margin-top: 24px;
@@ -533,11 +535,7 @@ textarea {
         font-size: 1.65rem;
     }
 
-    .login-fieldset {
-        padding: 24px 16px;
-    }
-
-    .login-fieldset .form-group {
+    .login-form .form-group {
         grid-template-columns: 100px minmax(0, 1fr);
         gap: 10px;
     }
@@ -546,7 +544,7 @@ textarea {
         justify-content: center;
     }
 
-    .login-fieldset .form-group input {
+    .login-form .form-group input {
         width: 100%;
         max-width: none;
     }

@@ -25,7 +25,7 @@ $userRole = $_SESSION['user_role'] ?? 'customer';
 
         <div class="topnav">
             <a href="index.php">Home</a>
-            <a href="register.php">Register</a>
+            <a href="../Controller/LogoutController.php">Logout</a>
             <div class="membership-link">
                 <a href="membership_required.php">Membership</a>
             </div>

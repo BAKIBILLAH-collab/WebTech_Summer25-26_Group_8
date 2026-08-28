@@ -23,8 +23,7 @@ $books = (new BookController())->search($search, $category);
 
         <div class="topnav">
             <a href="index.php">Home</a>
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
+            <a href="../Controller/LogoutController.php">Logout</a>
             <div class="membership-link">
                 <a href="membership_required.php">Membership</a>
             </div>
