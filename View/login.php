@@ -52,7 +52,7 @@ $remembered = isset($_COOKIE['remember_user']);
         </form>
 
         <div class="link-row">
-            <a href="register.php">Create new account</a>
+            Don't have an account?<a href="register.php"> Create one</a>
         </div>
     </div>
 </body>
