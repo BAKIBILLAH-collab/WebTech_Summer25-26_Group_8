@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../Model/UserModel.php';
 
-$name = trim($_POST['username'] ?? '');
+$name = trim($_POST['username'] ?? $_POST['name'] ?? '');
 
 if ($name === '') {
     echo 'Name Required';
