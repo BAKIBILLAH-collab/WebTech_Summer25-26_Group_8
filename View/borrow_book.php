@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ . '/../Model/Session.php';
+requireLogin();
+
 $selectedBook = json_decode(base64_decode($_GET['book'] ?? '', true), true);
 $selectedBook = is_array($selectedBook) ? $selectedBook : [];
 $bookTitle = $selectedBook['title'] ?? 'PHP for Beginners';
@@ -64,5 +67,10 @@ $bookAuthor = $selectedBook['author'] ?? 'John Smith';
             <a href="index.php">Back to menu</a>
         </div>
     </div>
+    <footer class="site-footer" role="contentinfo">
+        <span>CareShelf Library Management System &copy; 2026</span>
+        <span>Contact: +880 1XXX-XXXXXX</span>
+        <a href="mailto:careshelf@example.com">careshelf@example.com</a>
+    </footer>
 </body>
 </html>

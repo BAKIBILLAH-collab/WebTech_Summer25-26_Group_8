@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../Model/Session.php';
+requireLogin();
 require_once __DIR__ . '/../Controller/BookController.php';
 
 $search = $_GET['search'] ?? '';
@@ -84,5 +86,10 @@ $books = (new BookController())->search($search, $category);
             <a href="index.php">Back to menu</a>
         </div>
     </div>
+    <footer class="site-footer" role="contentinfo">
+        <span>CareShelf Library Management System &copy; 2026</span>
+        <span>Contact: +880 1XXX-XXXXXX</span>
+        <a href="mailto:careshelf@example.com">careshelf@example.com</a>
+    </footer>
 </body>
 </html>
