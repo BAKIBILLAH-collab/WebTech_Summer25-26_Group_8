@@ -60,11 +60,46 @@ class UserModel
         ]);
         $user = $statement->fetch();
 
-        if ($user === false || !password_verify($password, $user['password'])) {
+        if ($user === false) {
+            return null;
+        }
+
+        $passwordMatches = password_verify($password, $user['password']);
+        if (!$passwordMatches && hash_equals((string) $user['password'], $password)) {
+            $passwordMatches = true;
+        }
+
+        if (!$passwordMatches) {
             return null;
         }
 
         unset($user['password']);
         return $user;
+    }
+
+    public function getCustomerById(int $customerId): ?array
+    {
+        $statement = Database::connect()->prepare(
+            'SELECT customer_id, full_name, email, phone_number, membership_status,
+                    membership_expiry_date, registered_date
+             FROM customers WHERE customer_id = :customer_id'
+        );
+        $statement->execute(['customer_id' => $customerId]);
+
+        $customer = $statement->fetch();
+        return $customer !== false ? $customer : null;
+    }
+
+    public function getCustomerByName(string $name): ?array
+    {
+        $statement = Database::connect()->prepare(
+            'SELECT customer_id, full_name, email, phone_number, membership_status,
+                    membership_expiry_date, registered_date
+             FROM customers WHERE full_name = :name'
+        );
+        $statement->execute(['name' => $name]);
+
+        $customer = $statement->fetch();
+        return $customer !== false ? $customer : null;
     }
 }

@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "title": "12",
+        "author": "121",
+        "isbn": "22",
+        "category": "22",
+        "total_copies": "22",
+        "available_copies": "22",
+        "path": "..\/Uploads\/2.jpg",
+        "timestamp": 1787942099
+    }
+]

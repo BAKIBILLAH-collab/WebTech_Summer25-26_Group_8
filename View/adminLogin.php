@@ -1,5 +1,6 @@
 <?php
-include "../Controller/adloginvalid.php";
+header('Location: login.php');
+exit;
 ?>
 
 <!DOCTYPE html>

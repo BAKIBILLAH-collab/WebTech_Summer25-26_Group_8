@@ -1,8 +1,8 @@
 <?php
 
 include "../Model/db.php";
-
-session_start();
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin', '../View/index.php');
 
 $name = "";
 $password = "";
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $database = new db();
         $connection = $database->connection();
-        $result = $database->signup($connection,"staff_accounts",$name,$password,$email,$role);
+        $result = $database->signup($connection,"staff_accounts",$name,password_hash($password, PASSWORD_DEFAULT),$email,$role);
 
         if($result)
         {

@@ -60,7 +60,7 @@ $books = (new BookController())->search($search, $category);
                 <?php foreach ($books as $book): ?>
                     <tr>
                         <td>
-                            <input class="book-select" type="radio" name="book" value="<?= htmlspecialchars(base64_encode(json_encode($book))) ?>" required>
+                            <input class="book-select" type="radio" name="book_id" value="<?= (int) $book['book_id'] ?>" required>
                         </td>
                         <td><?= htmlspecialchars($book['title']) ?></td>
                         <td><?= htmlspecialchars($book['author']) ?></td>

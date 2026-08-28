@@ -1,6 +1,8 @@
 <?php
 
 include "../Model/db.php";
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin', '../View/index.php');
 
 $search = "";
 $message = "";

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin');
 include "../Controller/adcsvalidation.php";
 ?>
 
@@ -114,7 +116,7 @@ include "../Controller/adcsvalidation.php";
                         <select id="membership_status" name="membership_status">
                             <option value="">Select Status</option>
                             <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
+                            <option value="expired">Expired</option>
                         </select>
                         <?php echo $membership_status; ?>
                     </td>

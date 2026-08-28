@@ -1,8 +1,8 @@
 <?php
 
 include "../Model/db.php";
-
-session_start();
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin', '../View/index.php');
 
 $title = "";
 $author = "";

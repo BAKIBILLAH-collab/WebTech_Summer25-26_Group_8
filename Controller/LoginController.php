@@ -25,6 +25,8 @@ $_SESSION['logged_in'] = true;
 $_SESSION['user_id'] = $user['user_id'];
 $_SESSION['user_name'] = $user['name'];
 $_SESSION['user_role'] = $user['role'];
+$_SESSION['username'] = $user['name'];
+$_SESSION['role'] = $user['role'];
 
 if ($remember) {
     setcookie('remember_user', $name, time() + 60 * 60 * 24, '/');
@@ -32,5 +34,9 @@ if ($remember) {
     setcookie('remember_user', '', time() - 3600, '/');
 }
 
-header('Location: ../View/index.php');
+$destination = strcasecmp($user['role'], 'Admin') === 0
+    ? '../View/admindashboard.php'
+    : '../View/index.php';
+
+header('Location: ' . $destination);
 exit;

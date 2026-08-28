@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin');
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -14,7 +18,7 @@
 
     <div class="topnav">
         <a href="admindashboard.php">Admin Dashboard</a> |
-        <a href="adminLogin.php">Logout</a>
+        <a href="../Controller/LogoutController.php">Logout</a>
     </div>
 
     <div class="container">

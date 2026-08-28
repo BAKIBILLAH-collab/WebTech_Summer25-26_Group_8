@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin');
 include "../Controller/staffvalidation.php";
 ?>
 
@@ -71,7 +73,7 @@ include "../Controller/staffvalidation.php";
         <a href="add-customer.php">Customers Add</a>
         <a href="csremove.php">Customers Remove</a>
         <a href="addstaff.php">Staff Add</a>
-        <a href="adminLogin.php">Logout</a>
+        <a href="../Controller/LogoutController.php">Logout</a>
 
     </div>
 

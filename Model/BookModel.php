@@ -30,4 +30,16 @@ class BookModel
 
         return $statement->fetchAll();
     }
+
+    public function getBookById(int $bookId): ?array
+    {
+        $statement = Database::connect()->prepare(
+            'SELECT book_id, title, author, category, available_copies
+             FROM books WHERE book_id = :book_id'
+        );
+        $statement->execute(['book_id' => $bookId]);
+
+        $book = $statement->fetch();
+        return $book !== false ? $book : null;
+    }
 }

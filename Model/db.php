@@ -7,7 +7,7 @@ class db
         $db_host = "localhost";
         $db_user = "root";
         $db_password = "";
-        $db_name = "Group-8";
+        $db_name = "careshelf";
 
         $connection = new mysqli($db_host,$db_user,$db_password,$db_name);
 
@@ -35,7 +35,7 @@ class db
     function addCustomer($connection,$name,$email,$phone,$password,$status,$expiry,$registered)
     {
         $sql = "INSERT INTO customers
-                (full_name, email, phone_number, passwords,
+            (full_name, email, phone_number, password,
                  membership_status, membership_expiry_date, registered_date)
                 VALUES
                 ('".$name."', '".$email."', '".$phone."', '".$password."',
@@ -86,7 +86,7 @@ class db
     function addBook($connection,$title,$author,$category,$isbn,$total_copies,$available_copies,$path)
     {
     $sql = "INSERT INTO books
-            (title, author, category, isbn, total_copies, available_copies, path)
+            (title, author, category, isbn, total_copies, available_copies, pdf_path)
             VALUES
             ('".$title."', '".$author."', '".$category."', '".$isbn."',
              '".$total_copies."', '".$available_copies."', '".$path."')";

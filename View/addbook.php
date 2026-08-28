@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../Model/Session.php';
+requireRole('Admin');
 include "../Controller/adbookvalidation.php";
 ?>
 

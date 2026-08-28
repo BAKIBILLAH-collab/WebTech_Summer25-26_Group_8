@@ -38,30 +38,45 @@ $userRole = $_SESSION['user_role'] ?? 'customer';
         <h1 class="page-title">Dashboard</h1>
 
         <div class="card-grid">
-            <div class="card">
-                <table class="card-table">
-                    <tr><td><img class="card-icon" src="../Assets/search.svg" alt=""></td></tr>
-                    <tr><td><br><h3>Search Book</h3><a href="search_book.php">Open</a></td></tr>
-                </table>
+            <div class="card search-card">
+                <div class="card-content">
+                    <h3 class="search-label">
+                        <span>Search Books</span>
+                        <img class="card-icon" src="../Assets/search.svg" alt="Search Books">
+                    </h3>
+                    <a href="search_book.php">Search</a>
+                </div>
             </div>
             <div class="card">
-                <table class="card-table">
-                    <tr><td class="card-icon-placeholder" aria-hidden="true"><br></td></tr>
-                    <tr><td><br><h3>Payment Receipt</h3><a href="payment_receipt.php">Open</a></td></tr>
-                </table>
+                <div class="card-content">
+                    <h3>My Books</h3>
+                    <a href="view_my_books.php">Open</a>
+                </div>
             </div>
             <div class="card">
-                <table class="card-table">
-                    <tr><td class="card-icon-placeholder" aria-hidden="true"><br></td></tr>
-                    <tr><td><br><h3>Borrow a Book</h3><a href="borrow_book.php">Open</a></td></tr>
-                </table>
+                <div class="card-content">
+                    <h3>Membership</h3>
+                    <a href="membership_required.php">Open</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Payment Receipt</h3>
+                    <a href="payment_receipt_new.php">Open</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Borrow a Book</h3>
+                    <a href="search_book.php">Open</a>
+                </div>
             </div>
         </div>
     </div>
     <footer class="site-footer" role="contentinfo">
         <span>CareShelf Library Management System &copy; 2026</span>
-        <span>Contact: +880 1XXX-XXXXXX</span>
-        <a href="mailto:careshelf@example.com">careshelf@example.com</a>
+        <span>Contact: +880 1792995852</span>
+        <a href="mailto:careshelf@example.com">careshelf@gmail.com</a>
     </footer>
 </body>
 </html>
