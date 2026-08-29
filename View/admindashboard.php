@@ -17,7 +17,7 @@ requireRole('Admin');
     </div>
 
     <div class="topnav">
-        <a href="admindashboard.php">Admin Dashboard</a> |
+        <a href="admindashboard.php">Admin Dashboard</a> 
         <a href="../Controller/LogoutController.php">Logout</a>
     </div>
 
@@ -78,8 +78,4 @@ requireRole('Admin');
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 3daec0c419bcd9eeef9460ecf11a041a447284e6

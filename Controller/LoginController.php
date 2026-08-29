@@ -34,9 +34,11 @@ if ($remember) {
     setcookie('remember_user', '', time() - 3600, '/');
 }
 
-$destination = strcasecmp($user['role'], 'Admin') === 0
-    ? '../View/admindashboard.php'
-    : '../View/index.php';
+$destination = match (strtolower((string) $user['role'])) {
+    'admin' => '../View/admindashboard.php',
+    'librarian' => '../View/indexx.php',
+    default => '../View/index.php',
+};
 
 header('Location: ' . $destination);
 exit;
