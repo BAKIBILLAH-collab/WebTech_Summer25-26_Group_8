@@ -101,7 +101,7 @@
         </form>
 
         <div class="link-row">
-            <a href="index.php">Back to menu</a>
+            <a href="indexx.php">Back to menu</a>
         </div>
     </div>
 </body>

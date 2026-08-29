@@ -79,7 +79,7 @@
 
         <div class="link-row">
             <a href="finepaymentrecord.php">View Payment Records</a> |
-            <a href="index.php">Back to menu</a>
+            <a href="indexx.php">Back to menu</a>
         </div>
     </div>
 </body>
