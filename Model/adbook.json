@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 [
     {
-        "title": "12",
-        "author": "121",
-        "isbn": "22",
-        "category": "22",
-        "total_copies": "22",
-        "available_copies": "22",
-        "path": "..\/Uploads\/2.jpg",
-        "timestamp": 1787942099
+        "title": "123",
+        "author": "111",
+        "isbn": "1111",
+        "category": "rt",
+        "total_copies": "12",
+        "available_copies": "11",
+        "path": "..\/Uploads\/Screenshot 2026-08-28 200309.jpg",
+        "timestamp": 1788026079
     }
 ]
-=======
-[]
->>>>>>> 3daec0c419bcd9eeef9460ecf11a041a447284e6
