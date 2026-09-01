@@ -1,0 +1,14 @@
+<?php
+$pageTitle='CareShelf - Overdue / Limit Alert';
+require_once __DIR__ . '/includes/header.php'; require_once __DIR__ . '/Model/app.php';
+[$database,$conn]=getDatabase();$userId=currentUserId($conn);
+$stmt=$conn->prepare("SELECT bh.id,b.title,b.author,bh.due_date,DATEDIFF(CURDATE(),bh.due_date) AS days_overdue,bh.fine FROM borrow_history bh JOIN books b ON b.id=bh.book_id WHERE bh.user_id=? AND bh.return_date IS NULL AND bh.due_date<CURDATE() ORDER BY bh.due_date");$stmt->bind_param('i',$userId);$stmt->execute();$overdue=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);$stmt->close();
+$stmt=$conn->prepare("SELECT COUNT(*) AS borrowed, COALESCE(SUM(fine),0) AS fine FROM borrow_history WHERE user_id=? AND return_date IS NULL");$stmt->bind_param('i',$userId);$stmt->execute();$summary=$stmt->get_result()->fetch_assoc();$stmt->close();$database->close();
+?>
+<h1 class="page-title">Overdue / Limit Alert</h1>
+<?php if($overdue): ?><div class="notice-box notice-danger">&#9888; Action Required: You have overdue books. Please return them or resolve the fines.</div><?php else: ?><div class="notice-box notice-success">&#10003; No overdue books found in the database.</div><?php endif; ?>
+<div class="alert-section"><h3 class="alert-section-title">Overdue Books</h3><div class="notice-box notice-info" style="text-align:left;font-weight:normal;">Fine Rule: <strong>BDT 10/day</strong> for first 7 days overdue; after 7 days, <strong>BDT 20/day</strong>.</div><div class="table-wrap"><table class="form-table book-table"><tr><th>Title</th><th>Author</th><th>Due Date</th><th>Days Overdue</th><th>Fine (BDT)</th></tr>
+<?php if(!$overdue): ?><tr><td colspan="5" style="text-align:center;">No overdue database records.</td></tr><?php else: foreach($overdue as $row): ?><tr><td><?php echo h($row['title']); ?></td><td><?php echo h($row['author']); ?></td><td><?php echo h($row['due_date']); ?></td><td class="overdue-days"><?php echo max(0,(int)$row['days_overdue']); ?> days</td><td class="fine-amount"><?php echo number_format((float)$row['fine'],2); ?></td></tr><?php endforeach; endif; ?></table></div></div>
+<div class="alert-section"><h3 class="alert-section-title">Borrowing Limit Status</h3><table class="form-table"><tr><td class="label"><strong>Books Currently Borrowed:</strong></td><td><span class="badge <?php echo (int)$summary['borrowed']>=7?'badge-danger':'badge-success'; ?>"><?php echo (int)$summary['borrowed']; ?> / 7</span></td></tr><tr><td class="label"><strong>Total Fine Due:</strong></td><td><span class="fine-amount">BDT <?php echo number_format((float)$summary['fine'],2); ?></span></td></tr></table></div>
+<div class="button-row"><a href="return_book.php" class="btn">Return a Book</a><a href="pay_membership.php" class="btn btn-warning">Pay Membership</a></div><div class="link-row"><a href="view_my_books.php">View My Books</a> | <a href="index.php">Back to menu</a></div>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
